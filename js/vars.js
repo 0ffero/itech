@@ -5,6 +5,18 @@ var vars = {
         width: 1920, height: 1080, cX: 1920/2, cY: 1080/2,
     },
 
+    anims: {
+        init: ()=> {
+            let frameCount = 4;
+            scene.anims.create({
+                key: `ringing`,
+                frames: scene.anims.generateFrameNames(`phones`, { prefix: 'phone', end: frameCount-1 }),
+                frameRate: frameCount,
+                repeat: -1
+            });
+        }
+    },
+
     phaserObject: {
         logo: {
             getRandomPoint: function (vec) {

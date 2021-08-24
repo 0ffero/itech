@@ -20,10 +20,13 @@ function preload () {
     scene.load.setPath('assets');
     scene.load.atlas('flares', 'particles/sparks.png', 'particles/sparks.json');
     scene.load.image('logo', 'images/itech.png'); scene.load.image('text', 'images/text.png'); scene.load.image('phone', 'images/phone.png');
+    scene.load.atlas('phones', 'images/phones.png', 'images/phones.json');
 }
 
 function create (){
     let v = vars; let c = v.canvas;
-    scene.add.image(c.cX+225,c.cY,'text'); scene.add.image(c.cX,c.cY+400,'phone');
+    v.anims.init();
+    scene.add.sprite(c.cX-400,c.cY+400,'phones','phone0').anims.play('ringing');
+    scene.add.image(c.cX+225,c.cY,'text'); scene.add.image(c.cX+150,c.cY+400,'phone');
     v.particles.init();
 }
