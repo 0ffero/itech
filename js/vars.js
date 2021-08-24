@@ -5,26 +5,6 @@ var vars = {
         width: 1920, height: 1080, cX: 1920/2, cY: 1080/2,
     },
 
-    graphics: {
-        logo: {
-            getPoints: function (quantity, stepRate) {
-                if (!stepRate) {
-                    stepRate = Phaser.Math.PI2 / quantity;
-                }
-
-                var input = Phaser.Utils.Array.NumberArrayStep(0, Phaser.Math.PI2, stepRate);
-                let logoPoints = [];
-                for (let t=0; t<input.length; t++) {
-                    let scale = 2 / (3 - Math.cos(2*t));
-                    let x = ~~(scale * Math.cos(t) * 4000)/10;
-                    let y = ~~(scale * Math.sin(2*t)/2*4000)/10;
-                    logoPoints.push(new Phaser.Geom.Point(x,y));
-                }
-                return logoPoints;
-            }
-        },
-    },
-
     phaserObject: {
         logo: {
             getRandomPoint: function (vec) {
