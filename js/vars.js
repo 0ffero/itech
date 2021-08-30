@@ -12,7 +12,8 @@ var vars = {
                 key: `ringing`,
                 frames: scene.anims.generateFrameNames(`phones`, { prefix: 'phone', end: frameCount-1 }),
                 frameRate: frameCount,
-                repeat: -1
+                repeat: -1,
+                //yoyo: true
             });
         }
     },
