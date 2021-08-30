@@ -26,7 +26,7 @@ function preload () {
 function create (){
     let v = vars; let c = v.canvas;
     v.anims.init();
-    scene.add.sprite(c.cX-400,c.cY+400,'phones','phone0').anims.play('ringing');
-    scene.add.image(c.cX+225,c.cY,'text'); scene.add.image(c.cX+150,c.cY+400,'phone');
+    scene.add.sprite(c.cX-500,c.cY+400,'phones','phone0').anims.play('ringing');
+    scene.add.image(c.cX+150,c.cY,'text'); scene.add.image(c.cX+50,c.cY+400,'phone');
     v.particles.init();
 }

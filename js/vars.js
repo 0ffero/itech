@@ -1,8 +1,13 @@
 var scene;
 var vars = {
-    version: 1.0,
+    version: 1.2,
     canvas: {
         width: 1920, height: 1080, cX: 1920/2, cY: 1080/2,
+    },
+
+    logo: {
+        width: 1022,
+        height: 557
     },
 
     anims: {
@@ -24,11 +29,11 @@ var vars = {
                 let x; let y; let pixel;
                 let c = vars.canvas;
                 do {
-                    x = Phaser.Math.Between(0, 1021);
-                    y = Phaser.Math.Between(0, 556);
+                    x = Phaser.Math.Between(0, vars.logo.width-1);
+                    y = Phaser.Math.Between(0, vars.logo.height-1);
                     pixel = scene.textures.getPixel(x, y, 'logo');
                 } while (pixel.alpha < 255);
-                return vec.setTo(x-c.cX/2-30,y-c.cY/2-200);
+                return vec.setTo(x-c.cX/2-100,y-c.cY/2-200);
             }
         },
     },
